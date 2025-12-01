@@ -18,15 +18,14 @@ def mask_account_card(card_info: str) -> str:
 
 
 
-
-
-
-
-
-
-
-def get_date(date: str) -> str:
+def get_date(date_time: str) -> str:
     '''функция принимает дату и возвращает ее в удобном формате'''
+
+
+
+    date_part = date_time.split("T")[0]
+    year, month, day = date_part.split("-")
+    return f"{day}.{month}.{year}"
 
 
 
