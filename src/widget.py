@@ -1,12 +1,9 @@
 def mask_account_card(card_info: str) -> str:
-    '''функция принимает тип и номер карты или счета и возвращает маску'''
+    """функция принимает тип и номер карты или счета и возвращает маску"""
 
-
-
-    parts = card_info.rsplit(' ',1)
+    parts = card_info.rsplit(" ", 1)
     type_name = parts[0]
     number = parts[1]
-
 
     if type_name == "Счет":
         return type_name + " " + "**" + number[-4:]
@@ -15,17 +12,9 @@ def mask_account_card(card_info: str) -> str:
         return type_name + " " + masked
 
 
-
-
-
 def get_date(date_time: str) -> str:
-    '''функция принимает дату и возвращает ее в удобном формате'''
-
-
+    """функция принимает дату и возвращает ее в удобном формате"""
 
     date_part = date_time.split("T")[0]
     year, month, day = date_part.split("-")
     return f"{day}.{month}.{year}"
-
-
-
