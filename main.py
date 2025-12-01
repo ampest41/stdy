@@ -1,14 +1,8 @@
-#from src.masks import get_mask_account
-#from src.masks import get_mask_card_number
+from src.widget import mask_account_card
 
-#card_number: str = input()
+card_info: str = input()
 
-#card_number = get_mask_card_number(card_number)
-#print(card_number)
+print(mask_account_card(card_info))
 
 
-#account: str = input()
-
-#account_number = get_mask_account(account)
-#print(account_number)
 
