@@ -21,5 +21,7 @@ print(sorted_by_date_transaction)
 # card_info: str = input()
 # date_time: str = input()
 
-# print(mask_account_card(card_info))
-# print(get_date(date_time))
+
+#print(mask_account_card(card_info))
+#print(get_date(date_time))
+
