@@ -1,27 +1,15 @@
 from typing import Any
 
 
-
-
-def filter_by_state(
-        transactions: list[dict[str,Any]],
-        state_value: str='EXECUTED'
-        ) -> list[dict[str,Any]]:
-    '''Фунция принимает список и фильтрует по ключу state'''
-    filtered_transactions=[]
+def filter_by_state(transactions: list[dict[str, Any]], state_value: str = "EXECUTED") -> list[dict[str, Any]]:
+    """Фунция принимает список и фильтрует по ключу state"""
+    filtered_transactions = []
     for transaction in transactions:
-        if transaction['state']==state_value:
+        if transaction["state"] == state_value:
             filtered_transactions.append(transaction)
     return filtered_transactions
 
 
-
-def sort_by_date(
-        transactions: list[dict[str,Any]],
-        reverse: bool = True
-        ) -> list[dict[str, Any]]:
-    '''функция принимает список и сортирует по дате'''
-    return sorted(transactions, key=lambda x: x['date'], reverse=reverse)
-
-
-
+def sort_by_date(transactions: list[dict[str, Any]], reverse: bool = True) -> list[dict[str, Any]]:
+    """функция принимает список и сортирует по дате"""
+    return sorted(transactions, key=lambda x: x["date"], reverse=reverse)
