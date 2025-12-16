@@ -13,10 +13,10 @@ transactions = [
 
 executed_transactions = filter_by_state(transactions)
 
-sorted_executed = sort_by_date(executed_transactions)
+sorted_by_date_transaction = sort_by_date(transactions)
 
 print(executed_transactions)
-print(sorted_executed)
+print(sorted_by_date_transaction)
 
 # card_info: str = input()
 # date_time: str = input()
