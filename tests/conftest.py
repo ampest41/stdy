@@ -1,10 +1,7 @@
-import pytest
 from typing import Any
 
-
-
 import pytest
-from typing import Any
+
 
 @pytest.fixture
 def sample_transactions() -> list[dict[str, Any]]:
@@ -35,6 +32,7 @@ def sample_transactions() -> list[dict[str, Any]]:
             "date": "2023-01-01T12:00:00",  # ← та же дата, что и у id=1
         },
     ]
+
 
 @pytest.fixture
 def empty_transactions() -> list:

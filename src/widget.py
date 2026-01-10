@@ -11,7 +11,6 @@ def mask_account_card(card_info: str) -> str:
         masked = f"{number[:4]} {number[4:6]}** **** {number[-4:]}"
         return masked
 
-
     parts = card_info.rsplit(" ", 1)
     if len(parts) < 2:
         raise ValueError("Не найден номер")
