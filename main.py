@@ -1,5 +1,5 @@
-# from src.widget import get_date
-# from src.widget import mask_account_card
+from src.widget import get_date
+from src.widget import mask_account_card
 from src.processing import filter_by_state
 from src.processing import sort_by_date
 
@@ -18,10 +18,10 @@ sorted_by_date_transaction = sort_by_date(transactions)
 print(executed_transactions)
 print(sorted_by_date_transaction)
 
-# card_info: str = input()
-# date_time: str = input()
+card_info: str = input()
+date_time: str = input()
 
 
-#print(mask_account_card(card_info))
-#print(get_date(date_time))
+print(mask_account_card(card_info))
+print(get_date(date_time))
 
