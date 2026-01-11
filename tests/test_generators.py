@@ -1,13 +1,16 @@
-from typing import Any, Iterator
+from typing import Any
+from typing import Iterator
+
+from src.generators import card_number_generator
 from src.generators import filter_by_currency
 from src.generators import transaction_descriptions
-from src.generators import card_number_generator
+
 
 def test_filter_by_currency_usd():
     transactions = [
         {"id": 1, "operationAmount": {"currency": {"code": "USD"}}},
         {"id": 2, "operationAmount": {"currency": {"code": "EUR"}}},
-        {"id": 3, "operationAmount": {"currency": {"code": "USD"}}}
+        {"id": 3, "operationAmount": {"currency": {"code": "USD"}}},
     ]
     result = list(filter_by_currency(transactions, "USD"))
     assert len(result) == 2
@@ -31,7 +34,7 @@ def test_filter_by_currency_missing_fields():
         {"id": 1},
         {"id": 2, "operationAmount": {}},
         {"id": 3, "operationAmount": {"currency": {}}},
-        {"id": 4, "operationAmount": {"currency": {"code": "USD"}}}
+        {"id": 4, "operationAmount": {"currency": {"code": "USD"}}},
     ]
     result = list(filter_by_currency(transactions, "USD"))
     assert len(result) == 1
@@ -49,7 +52,7 @@ def test_transaction_descriptions_normal():
     transactions = [
         {"id": 1, "description": "Перевод организации"},
         {"id": 2, "description": "Пополнение счета"},
-        {"id": 3, "description": "Оплата услуг"}
+        {"id": 3, "description": "Оплата услуг"},
     ]
 
     result = list(transaction_descriptions(transactions))
@@ -62,7 +65,7 @@ def test_transaction_descriptions_missing_description():
     transactions = [
         {"id": 1, "description": "Есть описание"},
         {"id": 2},  # нет description
-        {"id": 3, "amount": 100}  # тоже нет
+        {"id": 3, "amount": 100},  # тоже нет
     ]
 
     result = list(transaction_descriptions(transactions))
@@ -89,14 +92,11 @@ def test_transaction_descriptions_all_empty_descriptions():
     result = list(transaction_descriptions(transactions))
     assert result == ["", "", ""]
 
+
 def test_card_number_generator_basic():
     """Тест: базовая генерация — правильный формат и последовательность."""
     result = list(card_number_generator(1, 3))
-    expected = [
-        "0000 0000 0000 0001",
-        "0000 0000 0000 0002",
-        "0000 0000 0000 0003"
-    ]
+    expected = ["0000 0000 0000 0001", "0000 0000 0000 0002", "0000 0000 0000 0003"]
     assert result == expected
 
 
@@ -138,11 +138,7 @@ def test_card_number_generator_empty_range():
 def test_card_number_generator_large_range():
     """Тест: генерация нескольких значений — проверка последовательности."""
     result = list(card_number_generator(9999999999999997, 9999999999999999))
-    expected = [
-        "9999 9999 9999 9997",
-        "9999 9999 9999 9998",
-        "9999 9999 9999 9999"
-    ]
+    expected = ["9999 9999 9999 9997", "9999 9999 9999 9998", "9999 9999 9999 9999"]
     assert result == expected
 
 
