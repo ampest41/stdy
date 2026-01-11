@@ -58,7 +58,6 @@ transactions = [
         "to": "Счет 75651667383060284188"
     }
 ]
-txs = filter_by_currency(transactions, "USD")
-
-for tx in txs:
-    print(tx)
+usd_transactions = filter_by_currency(transactions, "USD")
+for _ in range(2):
+    print(next(usd_transactions))
