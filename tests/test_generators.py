@@ -6,16 +6,17 @@ from src.generators import filter_by_currency
 from src.generators import transaction_descriptions
 
 
-def test_filter_by_currency_usd():
-    transactions = [
-        {"id": 1, "operationAmount": {"currency": {"code": "USD"}}},
-        {"id": 2, "operationAmount": {"currency": {"code": "EUR"}}},
-        {"id": 3, "operationAmount": {"currency": {"code": "USD"}}},
-    ]
-    result = list(filter_by_currency(transactions, "USD"))
+def test_filter_by_currency_usd(currency_transactions):
+    result = list(filter_by_currency(currency_transactions, "USD"))
     assert len(result) == 2
-    assert result[0]["id"] == 1
-    assert result[1]["id"] == 3
+    assert result[0]["id"] == 939719570
+    assert result[1]["id"] == 142264268
+
+
+def test_filter_by_currency_eur(currency_transactions):
+    result = list(filter_by_currency(currency_transactions, "EUR"))
+    assert len(result) == 1
+    assert result[0]["description"] == "Покупка в Европе"
 
 
 def test_filter_by_currency_no_matches():
