@@ -1,7 +1,6 @@
 from .decorators import log
 
 
-
 @log(filename="mylog.txt")
 def mask_account_card(card_info: str) -> str:
     """функция принимает тип и номер карты или счета и возвращает маску"""
@@ -33,8 +32,8 @@ def mask_account_card(card_info: str) -> str:
         masked = f"{number[0:4]} {number[4:6]}** **** {number[-4:]}"
         return type_name + " " + masked
 
-@log(filename="mylog.txt")
 
+@log(filename="mylog.txt")
 def get_date(date_time: str) -> str:
     """функция принимает дату и возвращает ее в удобном формате"""
 

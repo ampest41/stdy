@@ -1,7 +1,6 @@
-from src.decorators import log
 import pytest
 
-
+from src.decorators import log
 
 
 def test_log_success(tmp_path):
@@ -10,11 +9,11 @@ def test_log_success(tmp_path):
     @log(filename=str(log_file))
     def test_func(a, b):
         return a + b
+
     result = test_func(1, 2)
     assert result == 3
     content = log_file.read_text()
     assert "test_func ok\n" in content
-
 
 
 def test_log_failure(tmp_path):
@@ -31,7 +30,6 @@ def test_log_failure(tmp_path):
     assert "test_func error: ZeroDivisionError. Inputs: (6, 0), {}" in content
 
 
-
 def test_log_success_console(capsys):
     @log()
     def test_func(a, b):
@@ -42,7 +40,6 @@ def test_log_success_console(capsys):
 
     captured = capsys.readouterr()
     assert "test_func ok" in captured.out
-
 
 
 def test_log_error_console(capsys):
