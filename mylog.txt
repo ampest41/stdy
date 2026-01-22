@@ -3,3 +3,99 @@ filter_by_state ok
 sort_by_date ok
 mask_account_card ok
 get_date ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+sort_by_date ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card error: ValueError. Inputs: ('',), {}
+mask_account_card error: ValueError. Inputs: ('Visa',), {}
+mask_account_card error: ValueError. Inputs: ('Карта 12345',), {}
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+sort_by_date ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card error: ValueError. Inputs: ('',), {}
+mask_account_card error: ValueError. Inputs: ('Visa',), {}
+mask_account_card error: ValueError. Inputs: ('Карта 12345',), {}
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+get_mask_account ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+filter_by_state ok
+sort_by_date ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card ok
+mask_account_card error: ValueError. Inputs: ('',), {}
+mask_account_card error: ValueError. Inputs: ('Visa',), {}
+mask_account_card error: ValueError. Inputs: ('Карта 12345',), {}
+get_date ok
+get_date ok
+get_date ok
+get_date ok
+get_date ok
