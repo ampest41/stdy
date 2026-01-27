@@ -1,3 +1,7 @@
+from .decorators import log
+
+
+@log(filename="mylog.txt")
 def get_mask_card_number(card_number: str) -> str:
     """функция маскирует номер карты"""
 
@@ -6,11 +10,12 @@ def get_mask_card_number(card_number: str) -> str:
     blocks = []
 
     for i in range(0, len(masked), 4):
-        block = masked[i : i + 4]
+        block = masked[i: i + 4]
         blocks.append(block)
     return " ".join(blocks)
 
 
+@log(filename="mylog.txt")
 def get_mask_account(account: str) -> str:
     """функция маскирует номер счета"""
 
